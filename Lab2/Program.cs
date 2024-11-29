@@ -12,24 +12,18 @@
             while (menu)
             {
                 WCTCaalculation();
-                Console.WriteLine("\tWind Chill Calculator\n\n\t[1] Beräkna Windchill faktorn i Km/h #1\n\t[2] Beräkna windchill faktron i m/s #2\n\t[3] Exit Program");
+                Console.WriteLine("\tWind Chill Calculator\n\n\t[1] Beräkna Windchill faktorn\n\t[2] Exit Program");
                 Int32.TryParse(Console.ReadLine(), out int menuChoice);
                 switch (menuChoice)
                 {
                     case 1:
                         {
                             Console.Clear();
-                            Console.WriteLine("Case 1");
+                            Console.WriteLine("");
 
                             break;
                         }
                     case 2:
-                        {
-                            Console.Clear();
-                            Console.WriteLine("Case 2");
-                            break;
-                        }
-                    case 3:
                         {
                             menu = false;
                             Environment.Exit(0);
@@ -56,6 +50,23 @@
                 Console.WriteLine(wtc);
 
             }
+        }
+        static void WindSpeed()
+        {
+            bool loop = true;
+            while (loop)
+            {
+                try 
+                {
+                    Double.TryParse(Console.ReadLine(), out int userInput);
+                    
+                }
+                catch
+                {
+
+                }
+            }
+
         }
     }
 }
