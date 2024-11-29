@@ -11,6 +11,7 @@
             bool menu = true;
             while (menu)
             {
+                WCTCaalculation();
                 Console.WriteLine("\tWind Chill Calculator\n\n\t[1] Beräkna Windchill faktorn i Km/h #1\n\t[2] Beräkna windchill faktron i m/s #2\n\t[3] Exit Program");
                 Int32.TryParse(Console.ReadLine(), out int menuChoice);
                 switch (menuChoice)
@@ -48,9 +49,11 @@
                 //Ta in km/h från användaren ska kunna omvandla till m/s om nödväntigt
                 //utifrån det ska vi beräkna windchill och utifrån det så ska vi
                 //ska vi kunna placera det på windchill indexet
-                double T;
-                double V;
-                double wtc = 13.12 + 0.6215 * T - 11.37 * V ^ 0.16 + 0.3965 * T * V ^ 0.16;
+                double T = 2;
+                double V = 3.3;
+                double P = Math.Pow(V, 0.16);
+                double wtc = 13.12 + 0.6215 * T - 11.37 * P + 0.3965 * T * P;
+                Console.WriteLine(wtc);
 
             }
         }
