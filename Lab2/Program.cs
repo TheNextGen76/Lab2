@@ -50,7 +50,47 @@
                             bool subMenu = true;
                             while (subMenu)
                             {
-                                Console.Write("\tChoose a speed km/h or m/s:");
+                                Console.Write("\n\tChoose a speed \n\t[1]km/h  \n\t[2]m/s:");
+                                Int32.TryParse(Console.ReadLine(), out int subMenuchoice);
+                                switch (subMenuchoice)
+                                {
+                                    case 1:
+                                        {
+                                            Console.Clear();
+                                            Console.WriteLine("\n\tWrite speed\t\n");
+                                            Double.TryParse(Console.ReadLine(), out windSpeeds);
+                                            if (windSpeeds != 0)
+                                            {
+                                                Console.Clear();
+                                                windSpeedsStr = " - " + windSpeeds.ToString();
+                                                hasWindSpeed = true;
+                                                subMenu = false;
+                                            }
+                                            else
+                                            {
+                                                Console.Clear();
+                                                Console.WriteLine("\tThis is not a WindSpeed! Please enter valid Wind Speed.\n");
+                                            }
+                                            break;
+                                        }
+                                    case 2:
+                                        {
+                                            Console.Clear();
+                                            Console.WriteLine("\n\tWrite Speed\n\t");
+                                            Int32.TryParse(Console.ReadLine(), out int userInput);
+                                            int ConvertMeters = (userInput * 3600) / 1000;
+                                            windSpeedsStr = " - " + ConvertMeters.ToString();
+                                            hasWindSpeed = true;
+                                            subMenu = false;
+                                            break;
+                                        }
+                                    default:
+                                        {
+                                            break;
+                                        }
+                                }
+                                
+
                                 string input = Console.ReadLine().ToLower(); 
                                 if (input == "km/h")
                                 {
