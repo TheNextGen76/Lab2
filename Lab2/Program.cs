@@ -18,7 +18,7 @@
             {
                 if (hasWindSpeed == true && hasTemprature == true) 
                 {
-                    wct = WCTCaalculation(temprature,windSpeeds);
+                    wct = WCTCalculation(temprature,windSpeeds);
                     if (wct > -25) 
                     {
                         wctIndexStr = $"\tThe Wind Chill is {wct}°C which is - Cold";
@@ -94,7 +94,7 @@
 
 
             }
-            static double WCTCaalculation(double temprature, double windSpeed)
+            static double WCTCalculation(double temprature, double windSpeed)
             {
                 //Ta in km/h från användaren ska kunna omvandla till m/s om nödväntigt
                 //utifrån det ska vi beräkna windchill och utifrån det så ska vi
