@@ -12,7 +12,6 @@
             string wctIndexStr = "";
             bool hasWindSpeed = false;
             bool hasTemprature = false;
-
             bool menu = true;
             while (menu)
             {
@@ -48,11 +47,50 @@
                     case 1:
                         {
                             Console.Clear();
-                            Console.WriteLine("Speed");
-                            Double.TryParse(Console.ReadLine(), out windSpeeds);
-                            windSpeedsStr = " - " + windSpeeds.ToString();
-                            hasWindSpeed = true;
+                            bool subMenu = true;
+                            while (subMenu)
+                            {
+                                Console.Write("\tChoose a speed km/h or m/s:");
+                                string input = Console.ReadLine().ToLower(); 
+                                if (input == "km/h")
+                                {
+                                    Console.Clear();
+                                    Console.WriteLine("\tWrite speed\n");
+                                    Double.TryParse(Console.ReadLine(), out windSpeeds);
+                                    if (windSpeeds != 0)
+                                    {
+                                        Console.Clear();
+                                        windSpeedsStr = " - " + windSpeeds.ToString();
+                                        hasWindSpeed = true;
+                                        subMenu = false;
+                                    }
+                                    else
+                                    {
+                                        Console.Clear();
+                                        Console.WriteLine("\tThis is not a WindSpeed! Please enter valid Wind Speed.\n");
+                                    }
 
+                                }
+                                else if (input == "m/s")
+                                {
+                                    Console.Clear();
+                                    Console.WriteLine("\tWrite Speed\n");
+                                    Int32.TryParse(Console.ReadLine, out int userInput);
+                                    int convertMeters = (userInput * 3600) / 1000;
+                                    windSpeedsStr = " - " + convertMeters.ToString();
+                                    hasWindSpeed = true;
+                                    subMenu = false;
+                                    
+
+                                }
+                                else
+                                {
+                                    Console.Clear();
+                                    Console.WriteLine("\tthis is not km/h or m/s, please enter a valid syntax.\n");
+
+                                }
+                                
+                            }
                             break;
                         }
                     case 2:
