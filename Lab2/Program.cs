@@ -89,7 +89,7 @@
                                                 if (windSpeeds != 0)
                                                 {
                                                     double convertedSpeed = (windSpeeds * 3600) / 1000;
-                                                    windSpeedsStr = " - " + convertedSpeed.ToString() + "km/s";
+                                                    windSpeedsStr = " - " + convertedSpeed.ToString() + "km/h";
                                                     hasWindSpeed = true;
                                                     subMenu = false;
                                                     choiceMenu = false;
