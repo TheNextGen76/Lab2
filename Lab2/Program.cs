@@ -12,7 +12,6 @@
             string wctIndexStr = "";
             bool hasWindSpeed = false;
             bool hasTemprature = false;
-
             bool menu = true;
             while (menu)
             {
@@ -48,17 +47,78 @@
                     case 1:
                         {
                             Console.Clear();
-                            Console.WriteLine("Speed");
-                            Double.TryParse(Console.ReadLine(), out windSpeeds);
-                            windSpeedsStr = " - " + windSpeeds.ToString();
-                            hasWindSpeed = true;
-
+                            bool subMenu = true;
+                            bool choiceMenu = true;
+                            while (subMenu)
+                            {
+                                Console.WriteLine("\tChoose a speed!\n\n\t[1] km/h\n\t[2] m/s");
+                                Int32.TryParse(Console.ReadLine(), out menuChoice);
+                                switch (menuChoice)
+                                {
+                                    case 1:
+                                        {
+                                            Console.Clear();
+                                            while (choiceMenu == true)
+                                            {                                             
+                                                Console.Write("\n\tkm/h: ");
+                                                Double.TryParse(Console.ReadLine(), out windSpeeds);
+                                                if (windSpeeds != 0)
+                                                {
+                                                    Console.Clear();
+                                                    windSpeedsStr = " - " + windSpeeds.ToString() + "km/h";
+                                                    hasWindSpeed = true;
+                                                    subMenu = false;
+                                                    choiceMenu = false;
+                                                }
+                                                else
+                                                {
+                                                    Console.Clear();
+                                                    Console.WriteLine("\tThis is not a valid input! Please enter km/h.\n");
+                                                }
+                                            }
+                         
+                                            break;
+                                        }
+                                    case 2:
+                                        {
+                                            Console.Clear();
+                                            while (choiceMenu)
+                                            {
+                                                Console.Write("\n\tm/s: ");
+                                                Double.TryParse(Console.ReadLine(), out windSpeeds);
+                                                if (windSpeeds != 0)
+                                                {
+                                                    double convertedSpeed = (windSpeeds * 3600) / 1000;
+                                                    windSpeedsStr = " - " + convertedSpeed.ToString() + "km/h";
+                                                    hasWindSpeed = true;
+                                                    subMenu = false;
+                                                    choiceMenu = false;
+                                                }
+                                                else
+                                                {
+                                                    Console.Clear();
+                                                    Console.WriteLine("\tThis is not a valid input! Please enter m/s.\n");
+                                                }
+                                            }
+                                           
+                                            break;
+                                        }
+                                    default:
+                                        {
+                                            Console.Clear();
+                                            Console.WriteLine("\tPlease choose a valid option\n");
+                                            break;
+                                        }
+                                }
+                            }
                             break;
                         }
                     case 2:
                         {
                             Console.Clear();
                             bool subMenu = true;
+                            bool choiceMenu = true;
+                            
                             while (subMenu)
                             {
                                 Console.Write("\tEnter a temprature in Celcius:");
@@ -73,7 +133,7 @@
                                 else
                                 {
                                     Console.Clear();
-                                    Console.WriteLine("\tThis is not a temprature! Please enter a valid temprature.\n");
+                                    Console.WriteLine("\tThis is not a valid input! Please enter a valid temprature.\n");
                                 }
                             }
                             break;
