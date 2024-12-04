@@ -89,47 +89,6 @@
                                             break;
                                         }
                                 }
-                                
-
-                                string input = Console.ReadLine().ToLower(); 
-                                if (input == "km/h")
-                                {
-                                    Console.Clear();
-                                    Console.WriteLine("\tWrite speed\n");
-                                    Double.TryParse(Console.ReadLine(), out windSpeeds);
-                                    if (windSpeeds != 0)
-                                    {
-                                        Console.Clear();
-                                        windSpeedsStr = " - " + windSpeeds.ToString();
-                                        hasWindSpeed = true;
-                                        subMenu = false;
-                                    }
-                                    else
-                                    {
-                                        Console.Clear();
-                                        Console.WriteLine("\tThis is not a WindSpeed! Please enter valid Wind Speed.\n");
-                                    }
-
-                                }
-                                else if (input == "m/s")
-                                {
-                                    Console.Clear();
-                                    Console.WriteLine("\tWrite Speed\n");
-                                    Int32.TryParse(Console.ReadLine(), out int userInput);
-                                    int ConvertMeters = (userInput * 3600) / 1000;
-                                    windSpeedsStr = " - " + ConvertMeters.ToString();
-                                    hasWindSpeed = true;
-                                    subMenu = false;
-                                    
-
-                                }
-                                else
-                                {
-                                    Console.Clear();
-                                    Console.WriteLine("\tthis is not km/h or m/s, please enter a valid syntax.\n");
-
-                                }
-                                
                             }
                             break;
                         }
