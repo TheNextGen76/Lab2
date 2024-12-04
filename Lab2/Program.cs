@@ -75,9 +75,9 @@
                                 {
                                     Console.Clear();
                                     Console.WriteLine("\tWrite Speed\n");
-                                    Int32.TryParse(Console.ReadLine, out int userInput);
-                                    int convertMeters = (userInput * 3600) / 1000;
-                                    windSpeedsStr = " - " + convertMeters.ToString();
+                                    Int32.TryParse(Console.ReadLine(), out int userInput);
+                                    int ConvertMeters = (userInput * 3600) / 1000;
+                                    windSpeedsStr = " - " + ConvertMeters.ToString();
                                     hasWindSpeed = true;
                                     subMenu = false;
                                     
