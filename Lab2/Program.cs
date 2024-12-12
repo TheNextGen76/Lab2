@@ -147,6 +147,8 @@
                         }
                     default:
                         {
+                            Console.Clear();
+                            Console.WriteLine("\tPlease enter a valid menu choice.\n");
                             break;
                         }
 
