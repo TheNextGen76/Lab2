@@ -4,6 +4,10 @@
     {
         static void Main(string[] args)
         {
+            //I början av programmet använder vi oss av datatyperna double för windspeed, temperatur och windchillfaktorn
+            //String för att hålla resultatet av uträkningen
+            //Bool för att skapa en meny och för anvädning i våran if-sats
+            //Vi använder dessa identifierare för att vi finner att de förklarar väl vad variabeln används för
             double temprature = 0;
             string tempratureStr = "";
             double windSpeeds = 0;
@@ -13,6 +17,7 @@
             bool hasWindSpeed = false;
             bool hasTemprature = false;
             bool menu = true;
+            //inom denna while-loop använder vi oss av tidigare identifierare och datatyper
             while (menu)
             {
                 if (hasWindSpeed == true && hasTemprature == true) 
