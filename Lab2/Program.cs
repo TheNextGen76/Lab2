@@ -17,7 +17,7 @@
             bool hasWindSpeed = false;
             bool hasTemprature = false;
             bool menu = true;
-            //inom denna while-loop använder vi oss av tidigare identifierare och datatyper
+            //Här använder vi oss av vår hasWindspeed of hasTempereture boolean för att se vad på windchillindexen som ska skrivas ut
             while (menu)
             {
                 if (hasWindSpeed == true && hasTemprature == true) 
@@ -67,6 +67,7 @@
                                             {                                             
                                                 Console.Write("\n\tkm/h: ");
                                                 Double.TryParse(Console.ReadLine(), out windSpeeds);
+                                                //Ser till att användaren har gjort ett giltigt val av hastighet
                                                 if (windSpeeds != 0)
                                                 {
                                                     Console.Clear();
@@ -91,6 +92,7 @@
                                             {
                                                 Console.Write("\n\tm/s: ");
                                                 Double.TryParse(Console.ReadLine(), out windSpeeds);
+                                                //Ser till att användaren har gjort ett giltigt val av hastighet
                                                 if (windSpeeds != 0)
                                                 {
                                                     double convertedSpeed = (windSpeeds * 3600) / 1000;
@@ -128,6 +130,7 @@
                             {
                                 Console.Write("\tEnter a temprature in Celcius:");
                                 Double.TryParse(Console.ReadLine(), out temprature);
+                                //Ser till att användaren har gjort ett giltigt val av temperatur
                                 if (temprature != 0)
                                 {
                                     Console.Clear();
